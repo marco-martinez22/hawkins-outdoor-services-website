@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hawkinsoutdoor.com/sitemap.xml
+Sitemap: https://marco-martinez22.github.io/hawkins-outdoor-services-website/sitemap.xml

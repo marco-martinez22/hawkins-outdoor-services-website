@@ -86,7 +86,7 @@ Before going live, update these placeholders:
 
 1. **Gallery images** — Replace gradient backgrounds on `.gallery-pair__image--*` with actual before/after photos
 2. **Google Reviews link** — In `index.html`, replace `placeid=PLACEHOLDER` with actual Google Place ID
-3. **Domain** — Update `https://hawkinsoutdoor.com/` in canonical URL, JSON-LD, `robots.txt`, and `sitemap.xml`
+3. **Domain** — Currently set to GitHub Pages URL (`https://marco-martinez22.github.io/hawkins-outdoor-services-website/`). Update in canonical URL, JSON-LD, `robots.txt`, and `sitemap.xml` if you move to a custom domain
 4. **Contact info** — Update phone number and email to real business details
 5. **Branding** — Optionally replace the green/gold color scheme; add real logo
 
