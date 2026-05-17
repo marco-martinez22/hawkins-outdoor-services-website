@@ -645,3 +645,80 @@ a {
     padding: 24px;
   }
 }
+
+/* ===== App bar mobile improvements (appended) ===== */
+/* Minimal, non-destructive overrides to improve touch targets and spacing on small screens. */
+
+@media (max-width: 768px) {
+  /* Ensure the nav inner uses the same horizontal padding as the site container so logo/toggle don't touch edges */
+  .nav__inner {
+    padding: 0 18px; /* slightly less than container to accommodate toggle */
+    gap: 12px;
+  }
+
+  /* Increase tappable area for the toggle without changing visual size of the bars */
+  .nav__toggle {
+    padding: 10px; /* larger hit area */
+    margin-left: 6px;
+    margin-right: -6px;
+    border-radius: 6px;
+  }
+
+  .nav__toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.18);
+  }
+
+  /* Make each nav link at least 44px tall for comfortable touch */
+  .nav__links a {
+    padding: 12px 20px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+  }
+
+  /* Slightly shrink the logo to avoid wrapping on small widths */
+  .nav__logo {
+    font-size: 1.05rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60%;
+  }
+
+  /* Keep the nav background consistent when open and avoid overlapping status bar on devices with safe areas */
+  .nav__links {
+    top: calc(64px + env(safe-area-inset-top));
+    padding-top: max(8px, env(safe-area-inset-top));
+  }
+
+  /* Make closing/opening feel smoother */
+  .nav__links,
+  .nav__toggle span {
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Reduce nav height slightly to preserve vertical space but keep touch targets */
+  .nav {
+    height: 60px;
+  }
+
+  .nav__inner {
+    padding: 0 12px;
+  }
+
+  .nav__logo {
+    font-size: 1rem;
+    max-width: 65%;
+  }
+
+  /* Make sure menu items remain comfortably tappable on small phones */
+  .nav__links a {
+    padding: 14px 18px;
+    font-size: 1rem;
+  }
+}
