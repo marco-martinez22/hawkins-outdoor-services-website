@@ -9,12 +9,25 @@
     toggle.addEventListener('click', function () {
       var isOpen = navLinks.classList.toggle('nav__links--open');
       toggle.setAttribute('aria-expanded', isOpen);
+      // visual state for hamburger (animate to X) and prevent background scrolling
+      if (isOpen) {
+        toggle.classList.add('nav__toggle--open');
+        document.documentElement.classList.add('no-scroll');
+        document.body.classList.add('no-scroll');
+      } else {
+        toggle.classList.remove('nav__toggle--open');
+        document.documentElement.classList.remove('no-scroll');
+        document.body.classList.remove('no-scroll');
+      }
     });
 
     document.querySelectorAll('.nav__links a').forEach(function (link) {
       link.addEventListener('click', function () {
         navLinks.classList.remove('nav__links--open');
         toggle.setAttribute('aria-expanded', 'false');
+        toggle.classList.remove('nav__toggle--open');
+        document.documentElement.classList.remove('no-scroll');
+        document.body.classList.remove('no-scroll');
       });
     });
   }

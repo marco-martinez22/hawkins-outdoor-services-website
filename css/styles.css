@@ -575,7 +575,8 @@ a {
     padding: 16px 0;
     transform: translateY(-110%);
     transition: transform 0.3s;
-    z-index: 999;
+    /* Ensure the mobile nav panel appears above the fixed app bar */
+    z-index: 1001;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   }
 
@@ -699,6 +700,25 @@ a {
   .nav__toggle span {
     transition: transform 0.25s ease, opacity 0.2s ease;
   }
+}
+
+/* Prevent background scrolling when mobile nav is open */
+html.no-scroll,
+body.no-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Hamburger -> X animation */
+.nav__toggle.nav__toggle--open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav__toggle.nav__toggle--open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.nav__toggle.nav__toggle--open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 @media (max-width: 480px) {
