@@ -99,12 +99,12 @@ a {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
-.nav__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-}
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
 
 .nav__logo {
   font-size: 1.25rem;
@@ -129,15 +129,18 @@ a {
   opacity: 1;
 }
 
-.nav__toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-}
+  .nav__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    /* ensure the toggle stays visually above the mobile overlay when present */
+    position: relative;
+    z-index: 1102;
+  }
 
 .nav__toggle span {
   display: block;
@@ -573,7 +576,8 @@ a {
     flex-direction: column;
     gap: 0;
     padding: 16px 0;
-    transform: translateY(-110%);
+    /* move well off-screen when closed to avoid partial overlap */
+    transform: translateY(-150%);
     transition: transform 0.3s;
     /* Ensure the mobile nav panel appears above the fixed app bar */
     z-index: 1001;
