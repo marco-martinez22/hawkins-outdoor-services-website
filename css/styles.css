@@ -578,10 +578,17 @@ a {
     /* Ensure the mobile nav panel appears above the fixed app bar */
     z-index: 1001;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    /* Keep overlay visually hidden and non-interactive when closed to avoid covering the toggle */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .nav__links--open {
     transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
 
   .nav__links li {
