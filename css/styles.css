@@ -611,6 +611,15 @@ a {
   }
 }
 
+/* Center contact info when form is removed */
+@media (min-width: 769px) {
+  .contact-grid {
+    /* single-column layout and center content */
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
 @media (max-width: 768px) {
   html {
     scroll-padding-top: 64px;
